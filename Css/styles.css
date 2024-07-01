@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+
+body{
+    background-color: #F0E68C;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1{
+    color: #BDB76B;
+    font-size: 90px;
+    font-family: "Shadows Into Light", cursive;
+    font-weight: 400;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container{
+    gap:51px;
+    flex-wrap: wrap;
+    align-items: center;
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.Card {
+    width: 117px;
+    height: 146px;
+    position: relative;
+    margin-top: 36px;
+}
+
+.face-card {
+    width: 100%;
+    height: 100%;
+    background-color: #A7E9AF;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.Card img{
+    width: 100%;
+    height: 100%;
+}
+
+.back{
+    transform: rotateY(180deg);
+}
+
+.Card.selected .back{
+    transform: rotateY(0deg);
+}
+
+.Card.selected .front{
+    transform: rotateY(-180deg);
+}
+
+@media screen and (max-widht: 600px) {
+    .container{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        max-width: 765px;
+        width: 100%;
+    }
+
+    .Card{
+        margin: 17px 17px;
+    }
+}
